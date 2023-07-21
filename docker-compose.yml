@@ -1,18 +1,33 @@
-# docker-compose.yml
 version: '3'
 services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    volumes:
-      - .:/app
 
   nginx:
     image: nginx:latest
+    container_name: nginx
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - web
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    restart: "unless-stopped"
+
+  server1:
+    build:
+      context: ./
+    container_name: server1
+    expose:
+      - "8000"
+    volumes:
+      - ./source/server1:/code
+      - /code/node_modules
+    restart: "unless-stopped"
+
+  server2:
+    build:
+      context: ./
+    container_name: server2
+    expose:
+      - "8000"
+    volumes:
+      - ./source/server2:/code
+      - /code/node_modules
+    restart: "unless-stopped"

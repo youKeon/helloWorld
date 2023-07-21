@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-from django.shortcuts import render
 
 
 def hello(request):
@@ -9,17 +8,25 @@ def hello(request):
         <style>
             body {
                 display: flex;
-                height: 100vh;
-                margin: 0;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                font-size: 100px;
+                font-size: 70px;
                 font-weight: bold;
+                background-color: #343148;
+                color: #D7C49E;
+                height: 100vh;
+                margin: 0;
+                gap: 20px;
+            }
+            .message {
+                letter-spacing: 4px;
+                line-height: 2;
             }
         </style>
     </head>
     <body>
-        <div>Hello World</div>
+        <div class="message">안녕하세요</div>
     </body>
     </html>
     """
