@@ -16,10 +16,6 @@ services:
     container_name: server1
     expose:
       - "8000"
-    volumes:
-      - ./source/server1:/code
-      - /code/node_modules
-    restart: "unless-stopped"
 
   server2:
     build:
@@ -27,7 +23,3 @@ services:
     container_name: server2
     expose:
       - "8000"
-    volumes:
-      - ./source/server2:/code
-      - /code/node_modules
-    restart: "unless-stopped"

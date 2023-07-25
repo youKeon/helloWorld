@@ -13,8 +13,8 @@ def hello(request):
                 justify-content: center;
                 font-size: 70px;
                 font-weight: bold;
-                background-color: #343148;
-                color: #D7C49E;
+                background-color: #05204A;
+                color: #F4FDFF;
                 height: 100vh;
                 margin: 0;
                 gap: 20px;
