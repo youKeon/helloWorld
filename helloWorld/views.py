@@ -27,6 +27,8 @@ def hello(request):
     </head>
     <body>
         <div class="message">안녕하세요</div>
+        <div class="message">Hello</div>
+        <div class="message">Hello world!</div>
     </body>
     </html>
     """
